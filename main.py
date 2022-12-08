@@ -30,6 +30,7 @@ def get_incorrect_cell(row1):
     for x in row1:
             datax =dateparser.parse(x)
             if datax is not None:
+
                 IncorrectCounter+=1
             elif re.match(r"([-+]?(?:\d+(?:.\d)?|.\d+)(?:[eE][-+]?\d+)?)", x):
                 IncorrectCounter += 1
