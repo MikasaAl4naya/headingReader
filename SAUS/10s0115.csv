@@ -1,0 +1,140 @@
+﻿Cause of Death ;International Classification of Disease Codes           (Tenth Revision);;;;;;
+;;2005;;;2006;;
+;;;;;;;
+;;Number;Rate;Age-adjusted rate \1;Number;Rate;Age-adjusted rate \1
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+    All causes ;;2 448 017;825,9;798,8;2 426 264;810,4;776,5
+;;;;;;;
+Major cardiovascular diseases;I00-I78;856 030;288,8;277,3;823 746;275,1;261,2
+  Diseases of heart;I00-I09,I11,I13,I20-I51;652 091;220,0;211,1;631 636;211,0;200,2
+    Acute rheumatic fever and chronic rheumatic heart disease;I00-I09;3 365;1,1;1,1;3 257;1,1;1,1
+    Hypertensive heart disease;I11;29 282;9,9;9,4;29 788;9,9;9,4
+    Hypertensive heart and renal disease;I13;3 172;1,1;1,0;2 918;1,0;0,9
+    Ischemic heart disease;I20-I25;445 687;150,4;144,4;425 425;142,1;134,9
+      Acute myocardial infarction;I21-I22;151 004;50,9;49,1;141 462;47,2;45,0
+      Other acute ischemic heart diseases;I24;3 565;1,2;1,2;3 932;1,3;1,2
+      Other forms of chronic ischemic heart disease;I20,I25;291 118;98,2;94,2;280 031;93,5;88,7
+        Atherosclerotic cardiovascular disease, so described;I25.0;62 799;21,2;20,3;61 030;20,4;19,3
+        All other forms of chronic ischemic heart disease;I20, I25.1-I25.9;228 319;77,0;73,9;219 001;73,1;69,4
+    Other heart diseases;I26-I51;170 585;57,6;55,2;170 248;56,9;53,9
+      Acute and subacute endocarditis;I33;1 209;0,4;0,4;1 216;0,4;0,4
+      Diseases of pericardium and acute myocarditis;I30-I31,I40;864;0,3;0,3;816;0,3;0,3
+      Heart failure;I50;58 933;19,9;18,9;60 337;20,2;18,9
+      All other forms of heart disease;I26-I28,I34-I38,I42-I49,I51;109 579;37,0;35,6;107 879;36,0;34,3
+;;;;;;;
+  Essential (primary) hypertension and hypertensive renal disease;I10,I12;24 902;8,4;8,0;23 855;8,0;7,5
+  Cerebrovascular diseases;I60-I69;143 579;48,4;46,6;137 119;45,8;43,6
+  Atherosclerosis ;I70;11 841;4,0;3,8;8 652;2,9;2,7
+  Other diseases of circulatory system;I71-I78;23 617;8,0;7,8;22 484;7,5;7,2
+    Aortic aneurysm and dissection;I71;13 843;4,7;4,6;13 238;4,4;4,3
+    Other diseases of arteries, arterioles and capillaries;I72-I78;9 774;3,3;3,2;9 246;3,1;2,9
+Other disorders of circulatory system;I80-I99;4 813;1,6;1,6;3 995;1,3;1,3
+;;;;;;;
+Malignant neoplasms;C00-C97;559 312;188,7;183,8;559 888;187,0;180,7
+  Malignant neoplasms of lip, oral cavity, and pharynx;C00-C14;7 773;2,6;2,5;7 720;2,6;2,5
+  Malignant neoplasms of esophagus;;13 499;4,6;4,4;13 686;4,6;4,4
+  Malignant neoplasms of stomach;;11 514;3,9;3,8;11 345;3,8;3,7
+  Malignant neoplasms of colon, rectum and anus;C18-C21;53 252;18,0;17,5;53 549;17,9;17,2
+  Malignant neoplasms of liver and intrahepatic bile ducts;;16 076;5,4;5,2;16 525;5,5;5,3
+  Malignant neoplasms of pancreas;;32 760;11,1;10,8;33 454;11,2;10,8
+  Malignant neoplasms of trachea, bronchus and lung;;159 292;53,7;52,6;158 664;53,0;51,5
+  Malignant melanoma of skin;C43;8 345;2,8;2,7;8 441;2,8;2,7
+  Malignant neoplasm of breast;C50;41 491;14,0;13,5;41 210;13,8;13,2
+  Malignant neoplasm of ovary;C56;14 787;5,0;4,8;14 857;5,0;4,8
+  Malignant neoplasm of prostate;C61;28 905;9,8;9,5;28 372;9,5;9,2
+  Malignant neoplasms of kidney and renal pelvis;C64-C65;12 517;4,2;4,1;12 379;4,1;4,0
+  Malignant neoplasms of bladder;;13 253;4,5;4,3;13 474;4,5;4,3
+  Malignant neoplasms of meninges, brain and other parts of central nervous system;C70-C72;13 152;4,4;4,3;12 886;4,3;4,2
+  Malignant neoplasms of lymphoid, hematopoietic and related tissue ;C81-C96;55 028;18,6;18,2;55 045;18,4;17,9
+    Non-Hodgkins' lymphoma;C82-C85;20 873;7,0;6,9;20 594;6,9;6,7
+    Leukemia ;C91-C95;21 623;7,3;7,1;21 944;7,3;7,1
+In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behavior;D00-D48;13 710;4,6;4,5;14 122;4,7;4,5
+;;;;;;;
+Accidents (unintentional injuries);V01-X59,Y85-Y86;117 809;39,7;39,1;121 599;40,6;39,8
+  Transport accidents;V01-V99,Y85;48 441;16,3;16,2;48 412;16,2;16,0
+    Motor vehicle accidents ;V02-V04,V09.0,V09.2,V12-V14,V19.0-V19.2,V19.4-V19.6,V20-V79,V80.3-V80.5, V81.0-V81.1,V82.0-V82.1,V83-V86,V87.0-V87.8,V88.0-V88.8,V89.0,V89.2;45 343;15,3;15,2;45 316;15,1;15,0
+    Other land transport accidents;V01,V05-V06,V09.1,V09.3-V09.9,V10-V11,V15-V18,V19.3,V19.8-V19.9,V80.0-V80.2, V80.6-V80.9,V81.2-V81.9,V82.2-V82.9,V87.9,V88.9,V89.1,V89.3,V89.9;1 241;0,4;0,4;1 181;0,4;0,4
+    Water, air and space, and other and unspecified transport accidents and their sequelae ;V90-V99,Y85;1 857;0,6;0,6;1 915;0,6;0,6
+  Nontransport accidents;W00-X59,Y86;69 368;23,4;22,9;73 187;24,4;23,8
+    Falls;W00-W19;19 656;6,6;6,4;20 823;7,0;6,6
+    Accidental discharge of firearms;W32-W34;789;0,3;0,3;642;0,2;0,2
+    Accidental drowning and submersion ;W65-W74 ;3 582;1,2;1,2;3 579;1,2;1,2
+    Accidental exposure to smoke, fire and flames;X00-X09;3 197;1,1;1,1;3 109;1,0;1,0
+    Accidental poisoning and exposure to noxious substances;X40-X49;23 618;8,0;7,9;27 531;9,2;9,1
+    Other and unspecified nontransport accidents and their sequelae ;W20-W31,W35-W64,W75-W99,X10-X39,X50-X59,Y86;18 526;6,3;6,1;17 503;5,8;5,6
+;;;;;;;
+Other acute lower respiratory infections;J20-J22;404;0,1;0,1;297;0,1;0,1
+  Acute bronchitis and bronchiolitis;J20-J21;283;0,1;0,1;214;0,1;0,1
+  Unspecified acute lower respiratory infection;J22;121;(-);(-);83;(-);(-)
+Chronic lower respiratory diseases;J40-J47;130 933;44,2;43,2;124 583;41,6;40,5
+  Bronchitis, chronic and unspecified;J40-J42;866;0,3;0,3;740;0,2;0,2
+  Emphysema;J43;14 002;4,7;4,6;12 551;4,2;4,1
+  Asthma;J45-J46;3 884;1,3;1,3;3 613;1,2;1,2
+  Other chronic lower respiratory diseases;J44,J47;112 181;37,8;37,0;107 679;36,0;34,9
+Influenza and pneumonia;J10-J18;63 001;21,3;20,3;56 326;18,8;17,8
+  Influenza;J10-J11;1 812;0,6;0,6;849;0,3;0,3
+  Pneumonia;J12-J18;61 189;20,6;19,7;55 477;18,5;17,5
+Tuberculosis ;A16-A19;648;0,2;0,2;652;0,2;0,2
+  Respiratory tuberculosis;A16;480;0,2;0,1;490;0,2;0,2
+  Other tuberculosis ;A17-A19;168;0,1;0,0;162;0,1;0,1
+;;;;;;;
+Meningococcal infection;A39;123;(-);(-);105;(-);(-)
+Septicemia ;A40-A41;34 136;11,5;11,2;34 234;11,4;11,0
+;;;;;;;
+Human immunodeficiency virus (HIV) disease;B20-B24;12 543;4,2;4,2;12 113;4,0;4,0
+;;;;;;;
+Anemias;D50-D64;4 624;1,6;1,5;3 996;1,3;1,3
+Diabetes mellitus;E10-E14;75 119;25,3;24,6;72 449;24,2;23,3
+Nutritional deficiencies;E40-E64;3 183;1,1;1,0;2 556;0,9;0,8
+  Malnutrition;E40-E46;3 003;1,0;1,0;2 377;0,8;0,7
+  Other nutritional deficiencies;E50-E64;180;0,1;0,1;179;0,1;0,1
+Meningitis;G00,G03;669;0,2;0,2;634;0,2;0,2
+Parkinson's disease ;G20-G21;19 544;6,6;6,4;19 566;6,5;6,3
+Alzheimer's disease;G30;71 599;24,2;22,9;72 432;24,2;22,6
+;;;;;;;
+Hernia ;K40-K46;1 639;0,6;0,5;1 744;0,6;0,5
+Chronic liver disease and cirrhosis;K70,K73-K74;27 530;9,3;9,0;27 555;9,2;8,8
+  Alcoholic liver disease;K70;12 928;4,4;4,2;13 050;4,4;4,1
+  Other chronic liver disease and cirrhosis;K73-K74;14 602;4,9;4,7;14 505;4,8;4,6
+Cholelithiasis and other disorders of gallbladder;K80-K82;3 072;1,0;1,0;3 114;1,0;1,0
+Nephritis, nephrotic syndrome and nephrosis; N00-N07,N17-N19,N25-N27;43 901;14,8;14,3;45 344;15,1;14,5
+  Acute and rapidly progressive nephritic and nephrotic syndrome ;N00-N01,N04;137;0,0;0,0;138;(-);(-)
+  Chronic glomerulonephritis, nephritis and nephropathy, not specified as acute ;N02-N03,N05-N07,N26 ;;;;;;
+   or chronic, and renal scerosis, unspecified;;867;0,3;0,3;1 841;0,6;0,6
+  Renal failure;N17-N19;42 868;14,5;14,0;43 344;14,5;13,9
+  Other disorders of kidney;N25,N27;29;0,0;0,0;21;0,0;0,0
+Infections of kidney;N10-N12,N13.6,N15.1;767;0,3;0,2;673;0,2;0,2
+Hyperplasia of prostate;N40;525;0,2;0,2;514;0,2;0,2
+Inflammatory diseases of female pelvic organs;N70-N76;120;(-);(-);112;(-);(-)
+Pregnancy, childbirth and the puerperium ;O00-O99;760;0,3;0,3;760;0,3;0,2
+;;;;;;;
+Congenital malformations, deformations and chromosomal abnormalities;Q00-Q99;10 410;3,5;3,5;10 489;3,5;3,5
+All other diseases (Residual) ;;217 632;73,4;70,5;237 421;79,3;75,2
+;;;;;;;
+Intentional self-harm (suicide) ;X60-X84,Y87.0;32 637;11,0;10,9;33 300;11,1;10,9
+  Intentional self-harm (suicide) by discharge of firearms;X72-X74;17 002;5,7;5,7;16 883;5,6;5,5
+  Intentional self-harm (suicide) by other and unspecified means and their sequelae ;X60-X71,X75-X84,Y87.0;15 635;5,3;5,2;16 417;5,5;5,4
+Assault (homicide);X85-Y09,Y87.1;18 124;6,1;6,1;18 573;6,2;6,2
+  Assault (homicide) by discharge of firearms;X93-X95;12 352;4,2;4,2;12 791;4,3;4,3
+  Assault (homicide) by other and unspecified means and their sequelae ;X85-X92,X96-Y09,Y87.1;5 772;1,9;1,9;5 782;1,9;1,9
+Legal intervention;Y35,Y89.0;414;0,1;0,1;434;0,1;0,2
+;;;;;;;
+Events of undetermined intent;Y10-Y34,Y87.2,Y89.9;4 742;1,6;1,6;5 131;1,7;1,7
+  Discharge of firearms, undetermined intent;Y22-Y24;221;0,1;0,1;220;0,1;0,1
+  Other and unspecified events of undetermined intent and their sequelae ;Y10-Y21,Y25-Y34,Y87.2,Y89.9;4 521;1,5;1,5;4 911;1,6;1,6
+Operations of war and their sequelae;Y36,Y89.1;27;(-);(-);28;(-);(-)
+Complications of medical and surgical care;Y40-Y84,Y88;2 653;0,9;0,9;2 521;0,8;0,8
+Injury by firearms \2;W32-W34,X72-X74,X93-X95,Y22-Y24,Y35.0;30 694;10,4;10,2;30 896;10,3;10,2
+Drug-induced deaths \2;F11.0-F11.5,F11.7-F11.9,F12.0-F12.5,F12.7-F12.9,F13.0-F13.5,F13.7-F13.9,F14.0-F14.5;33 541;11,3;11,3;38 396;12,8;12,7
+Alcohol-induced deaths \2;F10,G31.2,G62.1,I42.6,K29.2,K70,R78.0,X45,X65,Y15;21 634;7,3;7,0;22 073;7,4;7,0
+Injury at work \3;X65, Y15;5 113;2,2;2,1;5 298;2,2;2,2
+Enterocolitis due to Clostridium difficile ;A04.7;(NA);(NA);(NA);6 225;2,1;2,0
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;

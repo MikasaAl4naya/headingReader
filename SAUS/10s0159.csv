@@ -1,0 +1,68 @@
+﻿;$del;;;;
+;$del;Physicians ;;Nurses;
+ ;$del;;;;
+;$del;;;;
+State;$del;  Total;Rate \1;   Total;Rate \1
+;$del;;;;
+    United States;"    <chgrow;bold>United States";816 727;271;2 468 340;819
+Alabama;Alabama;10 094;218;42 180;912
+Alaska;Alaska;1 556;228;5 150;756
+Arizona;Arizona;13 321;210;34 580;544
+Arkansas;Arkansas;5 758;203;21 920;774
+California;California;97 743;269;233 200;641
+Colorado;Colorado;12 576;260;36 850;761
+Connecticut;Connecticut;13 135;376;34 690;994
+Delaware;Delaware;2 163;251;8 420;977
+District of Columbia;District of Columbia;4 745;807;8 110;1 380
+Florida;Florida;45 110;248;148 180;814
+Georgia;Georgia;20 708;217;62 230;653
+Hawaii;Hawaii;4 049;317;9 620;753
+Idaho;Idaho;2 526;169;9 600;642
+Illinois;Illinois;35 932;280;104 130;812
+Indiana;Indiana;13 745;217;54 770;864
+Iowa;Iowa;5 647;189;29 550;990
+Kansas;Kansas;6 181;223;24 070;867
+Kentucky;Kentucky;9 843;232;39 120;923
+Louisiana;Louisiana;11 487;263;39 090;894
+Maine;Maine;3 662;278;13 850;1 053
+Maryland;Maryland;23 680;421;48 840;869
+Massachusetts;Massachusetts;30 335;469;78 280;1 210
+Michigan;Michigan;25 146;250;84 480;841
+Minnesota;Minnesota;15 194;293;52 690;1 017
+Mississippi;Mississippi;5 196;178;25 350;868
+Missouri;Missouri;14 462;246;56 290;958
+Montana;Montana;2 110;221;7 160;748
+Nebraska;Nebraska;4 342;245;17 870;1 010
+Nevada;Nevada;4 796;188;14 670;574
+New Hampshire;New Hampshire;3 607;275;12 730;970
+New Jersey;New Jersey;27 373;316;78 510;907
+New Mexico;New Mexico;4 785;244;11 400;580
+New York;New York;76 925;396;166 990;859
+North Carolina;North Carolina;22 987;254;80 090;886
+North Dakota;North Dakota;1 559;244;7 000;1 097
+Ohio;Ohio;30 615;267;114 920;1 001
+Oklahoma;Oklahoma;6 260;173;25 700;712
+Oregon;Oregon;10 253;274;29 700;795
+Pennsylvania;Pennsylvania;37 924;305;126 370;1 017
+Rhode Island;Rhode Island;3 955;376;10 600;1 007
+South Carolina;South Carolina;10 122;230;35 040;795
+South Dakota;South Dakota;1 743;219;9 670;1 215
+Tennessee;Tennessee;16 206;264;54 960;894
+Texas;Texas;51 080;214;157 870;662
+Utah;Utah;5 553;208;16 670;625
+Vermont;Vermont;2 320;374;5 660;912
+Virginia;Virginia;21 132;274;57 740;750
+Washington;Washington;17 413;270;49 910;774
+West Virginia;West Virginia;4 201;232;16 970;938
+Wisconsin;Wisconsin;14 507;259;50 690;905
+Wyoming;Wyoming;965;184;42 050;812
+;$del;;;;
+;[tbf]Source: Physicians: American Medical Association, Chicago, IL,  ;;;;
+;<mdit>Physician Characteristics and Distribution in the U.S., <med>annual ;;;;
+;"(copyright); Nurses: Bureau of Labor Statistics, Occupational Employment Statistics,";;;;
+;" Occupational Employment and Wages; <mdit>May 2007 Wage and Employment Statistics;";;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;

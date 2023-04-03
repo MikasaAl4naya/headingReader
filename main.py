@@ -5,7 +5,7 @@ import pprint
 import re
 import os
 from collections import Counter
-
+import pandas as pd
 import dateparser
 import stanza as stanza
 
@@ -39,6 +39,31 @@ def get_incorrect_cell(row1):
                 IncorrectCounter += 1
     return IncorrectCounter
 
+
+# def aggregate_scores(first_row_score, candidates_scores):
+#     # Нормализуем оценку первой строки
+#     P = first_row_score / len(headers_found)
+#
+#     # Пройдемся по списку предполагаемых кандидатов и добавим оценку P, если индекс первой строки не указан
+#     for candidate in candidates_scores:
+#         if 0 not in candidate[0]:
+#             candidate[0].insert(0, 0)
+#             candidate[1] += P
+#         else:
+#             candidate[1] = P
+#
+#     # Добавим в список новый кандидат, если индекс первой строки не был учтен ранее
+#     new_candidate = [[0], P]
+#     if new_candidate not in candidates_scores:
+#         candidates_scores.append(new_candidate)
+#
+#     # Отсортируем список кандидатов по убыванию оценок
+#     candidates_scores.sort(key=lambda x: x[1], reverse=True)
+#
+#     # Выберем кандидата с максимальной оценкой
+#     AGG = candidates_scores[0][0]
+#
+#     return AGG
 
 def regular(row):
     if re.search(r"^-[1-9]\d*$", row):
@@ -81,75 +106,107 @@ def regular(row):
 def test_ner(text):
     doc = nlp(text)
     if len(doc.ents) == 0:
-        return (regular(text))
+        return regular(text)
     else:
         for ent in doc.ents:
-            return(ent.type)
+            return ent.type
 
 stanza.download("ru")
 nlp = stanza.Pipeline(lang="ru", processors="tokenize,ner")
-for filename in glob.glob('tables\ipv4.csv'):
-    print(str(filename))
+for filename in glob.glob('SAUS/*.csv'):
     with open(os.path.join(os.getcwd(), filename), 'r') as file:
         file_reader = csv.reader(file, skipinitialspace=True, delimiter=",")
-        reader= list(file_reader)
+        reader = list(file_reader)
         rows = 10
-        max,i=-1000,0
-        while i<len(reader):
-            if max<len(reader[i]):
-                max= len(reader[i])
-            i=i+1
-        columns = max
-        print(rows,columns)
+        max_len, i = -1000, 0
+        while i < len(reader):
+            if max_len < len(reader[i]):
+                max_len = len(reader[i])
+            i = i + 1
+        columns = max_len
         test_ner_list = [[0 for x in range(columns)] for y in range(rows)]
-        j,i = 0,0
+        j, i = 0, 0
         for row in reader:
             for x in row:
                 test_ner_list[j][i] = test_ner(x)
                 i = i + 1
             i = 0
-            j= j+1
-            if j ==10:
+            j = j + 1
+            if j == 10:
                 break
-        pprint.pprint(test_ner_list)
-        j, i,count_true,count, min, j_head = 0, 0, 0, 0, 1000, 0
-        while j< rows + 1:
-            while i<columns:
-                if test_ner_list[j][i] == test_ner_list[j+1][i]:
-                    count_true=count_true+1
-                i = i + 1
-            print("Совпадают " +str (count_true)+ ' из '+ str(columns))
-            if min >= count_true:
-                count = 0
-                min = count_true
-                j_head=j
-            else:
-                count= count +1
-                if count == 4:
-                    print(str(reader[j_head]) + "- заголовок")
-                    break
-            count_true=0
-            i=0
-            j=j+1
-            if j== 10:
-                break
-        # print("------------------------------------------------------------------------------------------------------------------------")
+        candidate_scores = []
+        sample_size, threshold = 10, 0.6
+        # Выполняем попарное сравнение определенных меток в ячейках столбца
+        headers_found = set()
+
+        for i in range(rows):
+            row_scores = []
+            for j in range(i + 1, min(i + sample_size, rows)):
+                # Сравниваем метки всех ячеек текущей строки и строки j
+                row_match_scores = [test_ner_list[i][k] == test_ner_list[j][k] for k in range(columns)]
+                row_score = sum(row_match_scores) / len(row_match_scores)
+                row_scores.append(row_score)
+
+            # Определяем оценку (ранг) для каждой предполагаемой строковой ячейки
+            if row_scores:
+                row_max = max(row_scores)
+                if row_max >= threshold:
+                    headers_found.add(i)
+                    new_candidate = [[i], row_max]
+                    if new_candidate not in candidate_scores:
+                        candidate_scores.append(new_candidate)
+        print('candidate_scores:', candidate_scores)
+
+        # Чтение проверочного CSV-файла
+        with open(os.path.join(os.getcwd(), 'test.csv'), 'r') as file:
+            check_reader = csv.reader(file, skipinitialspace=True, delimiter=",")
+            check_list = list(check_reader)
+
+        # Сравнение результатов программы с проверочным файлом
+        CH = len(headers_found.intersection(set(range(len(reader[0])))))
+        H = len(headers_found)
+        R = len(reader) - len(headers_found)
+        HUR = len(set(range(len(reader[0]))).union(set(range(len(reader) - len(headers_found)))))
+        # Оценка качества определения заголовков таблицы после проверки с проверочным файлом
+        precision = CH / HUR
+        recall = CH / R
+        f1 = 0 if (precision + recall) == 0 else (2 * precision * recall) / (precision + recall)
+        # Вывод результатов оценки качества определения заголовков
+        print(f"Test file: {filename}")
+        print(f"Header found: {headers_found}")
+        print(f"CH = {CH}, H = {H}, R = {R}")
+        print(f"HUR = {HUR}")
+        print(f"Precision = {precision:.3f}")
+        print(f"Recall = {recall:.3f}")
+        print(f"F1 = {f1:.3f}")
+
+        print("------------------------------------------------------------------------------------------------------------------------")
         w1, w2, w3 = 2, 1, 1
         IncorCoef, VoidCoef, RepCoef = 0, 0, 0
         row1=reader[0]
         print(row1)
-        print('В первой строке в файле', filename)
-        print("Всего количества яйчеек:", len(row1))
-        print('Уникальных значений', get_unique_cell(row1))
-        print("Пустых значений:",get_void_cell(row1))
-        print("Некорректных значений", get_incorrect_cell(row1))
+        # print('В первой строке в файле', filename)
+        # print("Всего количества яйчеек:", len(row1))
+        # print('Уникальных значений', get_unique_cell(row1))
+        # print("Пустых значений:",get_void_cell(row1))
+        # print("Некорректных значений", get_incorrect_cell(row1))
         RepCoef = get_unique_cell(row1)/len(row1) *w1
         VoidCoef = get_void_cell(row1) / len(row1) * w2
         IncorCoef=get_incorrect_cell(row1)/len(row1)*w3
         Coef = RepCoef -(IncorCoef + VoidCoef)
         if Coef<0:
             Coef=0
-        print("Вероятность того, что эта строка заголовок равна", ((Coef)/2))
+        print("Вероятность того, что первая строка заголовок равна", ((Coef)/2))
+        # Объединение оценок
+        P = Coef
+        for i, candidate in enumerate(candidate_scores):
+            if candidate[0] == [0]:
+                candidate[1] += P
 
-
-
+        # Определение лучшего заголовка
+        best_candidate = max(candidate_scores, key=lambda x: x[1])
+        best_header = reader[best_candidate[0][0]][0]
+        best_score = best_candidate[1]
+        normalized_score = best_score/(3)
+        print('Best header:', best_header)
+        print('Score:', round(normalized_score,2))
