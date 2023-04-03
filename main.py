@@ -165,7 +165,7 @@ for filename in glob.glob('SAUS/*.csv'):
         # Сравнение результатов программы с проверочным файлом
         CH = len(headers_found.intersection(set(range(len(reader[0])))))
         H = len(headers_found)
-        R = len(reader) - len(headers_found)
+        R = len(check_list)
         HUR = len(set(range(len(reader[0]))).union(set(range(len(reader) - len(headers_found)))))
         # Оценка качества определения заголовков таблицы после проверки с проверочным файлом
         precision = CH / HUR
