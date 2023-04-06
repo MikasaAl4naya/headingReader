@@ -64,7 +64,12 @@ def get_incorrect_cell(row1):
 #     AGG = candidates_scores[0][0]
 #
 #     return AGG
+def write_total_score(path,  result):
 
+    if not os.path.exists(path):
+        os.makedirs(path)
+    with open(path, "a", encoding="utf-8") as file:
+        file.write(result)
 def regular(row):
     if re.search(r"^-[1-9]\d*$", row):
         return ('NEGATIVE_INTEGER')
@@ -111,10 +116,13 @@ def test_ner(text):
         for ent in doc.ents:
             return ent.type
 
+        # Чтение проверочного CSV-файла
+file = 'test.csv'
+table = pd.DataFrame(pd.read_csv(file))
 stanza.download("ru")
 nlp = stanza.Pipeline(lang="ru", processors="tokenize,ner")
-for filename in glob.glob('SAUS/*.csv'):
-    with open(os.path.join(os.getcwd(), filename), 'r') as file:
+for filepath in glob.glob('SAUS/*.csv'):
+    with open(os.path.join(os.getcwd(), filepath), 'r') as file:
         file_reader = csv.reader(file, skipinitialspace=True, delimiter=",")
         reader = list(file_reader)
         rows = 10
@@ -138,15 +146,11 @@ for filename in glob.glob('SAUS/*.csv'):
         sample_size, threshold = 10, 0.6
         # Выполняем попарное сравнение определенных меток в ячейках столбца
         headers_found = set()
-
         for i in range(rows):
             row_scores = []
-            for j in range(i + 1, min(i + sample_size, rows)):
-                # Сравниваем метки всех ячеек текущей строки и строки j
-                row_match_scores = [test_ner_list[i][k] == test_ner_list[j][k] for k in range(columns)]
-                row_score = sum(row_match_scores) / len(row_match_scores)
-                row_scores.append(row_score)
-
+            row_match_scores = [test_ner_list[i][k] == test_ner_list[0][k] for k in range(columns)]
+            row_score = sum(row_match_scores) / len(row_match_scores)
+            row_scores.append(row_score)
             # Определяем оценку (ранг) для каждой предполагаемой строковой ячейки
             if row_scores:
                 row_max = max(row_scores)
@@ -156,17 +160,18 @@ for filename in glob.glob('SAUS/*.csv'):
                     if new_candidate not in candidate_scores:
                         candidate_scores.append(new_candidate)
         print('candidate_scores:', candidate_scores)
-
-        # Чтение проверочного CSV-файла
-        with open(os.path.join(os.getcwd(), 'test.csv'), 'r') as file:
-            check_reader = csv.reader(file, skipinitialspace=True, delimiter=",")
-            check_list = list(check_reader)
-
+        R=0
+        R_list = list()
+        filename = os.path.basename(filepath)
+        for i in table.index:
+            if table['name'][i] == filename[:-4]:
+                R+=1
+                R_list.append(table['id'][i])
+        print(R)
         # Сравнение результатов программы с проверочным файлом
         CH = len(headers_found.intersection(set(range(len(reader[0])))))
         H = len(headers_found)
-        R = len(check_list)
-        HUR = len(set(range(len(reader[0]))).union(set(range(len(reader) - len(headers_found)))))
+        HUR = len(headers_found.union(R_list))
         # Оценка качества определения заголовков таблицы после проверки с проверочным файлом
         precision = CH / HUR
         recall = CH / R
@@ -179,17 +184,17 @@ for filename in glob.glob('SAUS/*.csv'):
         print(f"Precision = {precision:.3f}")
         print(f"Recall = {recall:.3f}")
         print(f"F1 = {f1:.3f}")
-
+        write_total_score('result.txt',filename[:-4]+f', {precision,recall,f1}\n')
         print("------------------------------------------------------------------------------------------------------------------------")
         w1, w2, w3 = 2, 1, 1
         IncorCoef, VoidCoef, RepCoef = 0, 0, 0
         row1=reader[0]
         print(row1)
-        # print('В первой строке в файле', filename)
-        # print("Всего количества яйчеек:", len(row1))
-        # print('Уникальных значений', get_unique_cell(row1))
-        # print("Пустых значений:",get_void_cell(row1))
-        # print("Некорректных значений", get_incorrect_cell(row1))
+        print('В первой строке в файле', filename)
+        print("Всего количества яйчеек:", len(row1))
+        print('Уникальных значений', get_unique_cell(row1))
+        print("Пустых значений:",get_void_cell(row1))
+        print("Некорректных значений", get_incorrect_cell(row1))
         RepCoef = get_unique_cell(row1)/len(row1) *w1
         VoidCoef = get_void_cell(row1) / len(row1) * w2
         IncorCoef=get_incorrect_cell(row1)/len(row1)*w3
@@ -202,7 +207,6 @@ for filename in glob.glob('SAUS/*.csv'):
         for i, candidate in enumerate(candidate_scores):
             if candidate[0] == [0]:
                 candidate[1] += P
-
         # Определение лучшего заголовка
         best_candidate = max(candidate_scores, key=lambda x: x[1])
         best_header = reader[best_candidate[0][0]][0]
